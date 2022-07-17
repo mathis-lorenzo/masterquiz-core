@@ -16,3 +16,8 @@ enum SignupType {
   email,
   google
 }
+
+enum ConnectionType {
+  login,
+  signup
+}
