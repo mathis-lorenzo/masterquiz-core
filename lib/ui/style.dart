@@ -38,7 +38,7 @@ class AppStyle {
 
 class AppButtonStyle {
   static ButtonStyle elevatedButton = ElevatedButton.styleFrom(
-    primary: Colors.white,
+    primary: AppColors.bluePalette,
     padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
     minimumSize: const Size.fromHeight(10),
     shape: RoundedRectangleBorder(
@@ -54,11 +54,12 @@ class AppButtonStyle {
     minimumSize: const Size.fromHeight(40)
   );
   static ButtonStyle whiteElevatedButton = ElevatedButton.styleFrom(
-    elevation: 0,
     primary: Colors.white,
-    onPrimary: AppColors.bluePalette,
-    padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 25),
-    minimumSize: const Size.fromHeight(40)
+    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+    minimumSize: const Size.fromHeight(10),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10),
+    )
   );
   static ButtonStyle underlineTextButton = TextButton.styleFrom(
     elevation: 0,
