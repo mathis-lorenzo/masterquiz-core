@@ -20,7 +20,7 @@ class AppStateError extends AppState {
 }
 
 class AppStateReady extends AppState {
-  final UserModel user;
+  UserModel user;
 
   AppStateReady(this.user);
 }

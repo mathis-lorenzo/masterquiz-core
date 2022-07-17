@@ -19,5 +19,5 @@ class AppColors {
     800: Color(0xFF00B163),
     900: Color(0xFF00A450),
   });
-  static const int _bluePalette = 0xFF00C680;
+  static const int _bluePalette = 0xFFAFCFFF;
 }

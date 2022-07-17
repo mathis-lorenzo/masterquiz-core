@@ -1,4 +1,7 @@
-enum QuestionType { multiple, trueFalse }
+enum QuestionType {
+  multiple,
+  trueFalse
+}
 
 enum ColorsType {
   gradientTop(1),
@@ -7,4 +10,9 @@ enum ColorsType {
 
   const ColorsType(this.value);
   final int value;
+}
+
+enum SignupType {
+  email,
+  google
 }

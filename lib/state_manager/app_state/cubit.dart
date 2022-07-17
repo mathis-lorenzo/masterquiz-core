@@ -55,7 +55,7 @@ class AppStateCubit extends Cubit<AppState> {
         return;
       }
       UserModel? currentUser = await FirestoreUserService()
-          .getUnique(FirebaseAuth.instance.currentUser!.uid);
+        .getUnique(FirebaseAuth.instance.currentUser!.uid);
       if (currentUser != null) {
         //user exist
         //Emit app ready state
@@ -82,6 +82,12 @@ class AppStateCubit extends Cubit<AppState> {
           "No user referenced in this state ${state.runtimeType}");
     } else {
       return (state as AppStateReady).user;
+    }
+  }
+
+  Future<void> setUser(UserModel model) async {
+    if (state is AppStateReady) {
+      (state as AppStateReady).user = model;
     }
   }
 

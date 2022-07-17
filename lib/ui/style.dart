@@ -31,19 +31,18 @@ class AppStyle {
     ),
     scaffoldBackgroundColor: Colors.white,
     cardColor: Colors.white,
-    fontFamily: 'EduVICWANTBeginner',
-    // textTheme: GoogleFonts.pacificoTextTheme()
+    // fontFamily: 'EduVICWANTBeginner',
+    textTheme: GoogleFonts.dmSansTextTheme()
   );
 }
 
 class AppButtonStyle {
   static ButtonStyle elevatedButton = ElevatedButton.styleFrom(
-    elevation: 10,
-    primary: AppColors.bluePalette[ColorsType.buttonColor.value]!.withOpacity(0.5),
+    primary: Colors.white,
     padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
-    minimumSize: const Size.fromHeight(40),
+    minimumSize: const Size.fromHeight(10),
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: BorderRadius.circular(10),
     )
   );
 
