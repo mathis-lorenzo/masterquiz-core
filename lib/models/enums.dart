@@ -12,11 +12,6 @@ enum ColorsType {
   final int value;
 }
 
-enum SignupType {
-  email,
-  google
-}
-
 enum ConnectionType {
   login,
   signup
