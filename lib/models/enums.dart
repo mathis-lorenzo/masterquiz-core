@@ -21,3 +21,25 @@ enum ConnectionType {
   login,
   signup
 }
+
+enum ItemType {
+  skinColor,
+  face,
+  hair,
+  eyebrows,
+  eyes,
+  ears,
+  nose, 
+  mouth,
+  shirt,
+  circle,
+  background,
+  hat,
+  earring,
+  necklace
+}
+
+enum Gender {
+  boy,
+  girl
+}
