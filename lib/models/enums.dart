@@ -31,7 +31,9 @@ enum ItemType {
   background,
   hat,
   earring,
-  necklace
+  necklace,
+  companion,
+  makeup
 }
 
 enum Gender {

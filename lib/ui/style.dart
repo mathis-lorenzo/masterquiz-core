@@ -82,4 +82,11 @@ class AppButtonStyle {
     side: const BorderSide(color: Colors.white),
     minimumSize: const Size.fromHeight(40)
   );
+  static ButtonStyle redOutlinedButton = OutlinedButton.styleFrom(
+    elevation: 0,
+    primary: Color.fromARGB(255, 182, 18, 6),
+    padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 25),
+    side: const BorderSide(color: Color.fromARGB(255, 167, 17, 6)),
+    minimumSize: const Size.fromHeight(40)
+  );
 }
