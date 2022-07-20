@@ -39,7 +39,24 @@ class AppStyle {
 class AppButtonStyle {
   static ButtonStyle elevatedButton = ElevatedButton.styleFrom(
     primary: AppColors.bluePalette,
-    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+    padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 25),
+    minimumSize: const Size.fromHeight(10),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10),
+    )
+  );
+  static ButtonStyle otherElevatedButton = ElevatedButton.styleFrom(
+    primary: Color.fromARGB(255, 174, 151, 255),
+    padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 25),
+    minimumSize: const Size.fromHeight(10),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10),
+    )
+  );
+  static ButtonStyle errorElevatedButton = ElevatedButton.styleFrom(
+    primary: Color.fromARGB(255, 219, 109, 109),
+    // primary: Color.fromARGB(255, 255, 125, 125),
+    padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 25),
     minimumSize: const Size.fromHeight(10),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(10),
@@ -55,7 +72,7 @@ class AppButtonStyle {
   );
   static ButtonStyle whiteElevatedButton = ElevatedButton.styleFrom(
     primary: Colors.white,
-    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+    padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 25),
     minimumSize: const Size.fromHeight(10),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(10),

@@ -20,4 +20,22 @@ class AppColors {
     900: Color(0xFF00A450),
   });
   static const int _bluePalette = 0xFFAFCFFF;
+
+  static const MaterialColor error = MaterialColor(_errorValue, <int, Color>{
+    1: Color(0xFFFEA7A7),
+    2: Color(0xFFFC3D3D),
+    3: Color(0xFFD1D1D1),
+
+    50: Color(0xFFFFEAEA),
+    100: Color(0xFFFECACA),
+    200: Color(0xFFFEA7A7),
+    300: Color(0xFFFE8383),
+    400: Color(0xFFFD6969),
+    500: Color(_errorValue),
+    600: Color(0xFFFD4747),
+    700: Color(0xFFFC3D3D),
+    800: Color(0xFFFC3535),
+    900: Color(0xFFFC2525),
+  });
+  static const int _errorValue = 0xFFFD4E4E;
 }

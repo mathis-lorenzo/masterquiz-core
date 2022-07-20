@@ -91,8 +91,14 @@ class AppStateCubit extends Cubit<AppState> {
     }
   }
 
-  Future<void> changeState(UserModel model) async {
-    return emit(AppStateReady(model));
+  Future<void> changeState(appState,[UserModel? model]) async {
+    if (appState == AppStateReady) {
+      print("coneccccccccccctttttttiiiiiiiiiioooooooonnnn");
+      return emit(AppStateReady(model!));
+    } else if (appState == AppStateNotConnected) {
+      print ("deconectiiiiiiiooooooooooooonnnnnnnnnnnn");
+      return emit(AppStateNotConnected());
+    }
   }
 
   void _startUserListener() {}
