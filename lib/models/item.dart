@@ -11,11 +11,13 @@ class ItemModel {
     required this.path,
     required this.link,
     required this.type,
-    required this.limited,
+    this.limited,
     this.start,
     this.end,
-    required this.costType,
-    required this.price
+    this.costType,
+    this.price,
+    this.gender,
+    this.defaultItem = false
   });
 
   ItemModel.fromJson(dynamic json) {
@@ -25,19 +27,21 @@ class ItemModel {
     limited = json['limited'];
     start = (json['start']as Timestamp?)?.toDate();
     end = (json['end']as Timestamp?)?.toDate();
-    costType = CostType.values.elementAt(json['costType']);
+    costType = json['costType'] != null ? CostType.values.elementAt(json['costType']) : null;
     price = json['price'];
-    gender = Gender.values.elementAt(json['gender']);
+    gender = json['gender'] != null ? Gender.values.elementAt(json['gender']) : null;
+    defaultItem = json['defaultItem'];
   }
 
   late String path;
   late String link;
   late ItemType type;
-  late bool limited;
+  late bool defaultItem;
+  late bool? limited;
   late DateTime? start;
   late DateTime? end;
-  late CostType costType;
-  late int price;
+  late CostType? costType;
+  late double? price;
   late Gender? gender;
 
   Map<String, dynamic> toJson() {
@@ -49,8 +53,9 @@ class ItemModel {
     map['start'] = start;
     map['end'] = end;
     map['price'] = price;
-    map['costType'] = costType.index;
+    map['costType'] = costType?.index;
     map['gender'] = gender?.index;
+    map['defaultItem'] = defaultItem; 
     return map;
   }
 }

@@ -5,7 +5,7 @@ import '/models/user.dart';
 
 class FirestoreUserService extends BaseFirestoreService<UserModel> {
   Future<void> update(UserModel user) async {
-    return collection.doc(user.username).update(user.toJson());
+    // collection.doc(user.username).update(user.toJson());
   }
 
   @override
