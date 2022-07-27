@@ -6,6 +6,28 @@ enum CostType {
   money
 }
 
+class SubItemModel {
+  SubItemModel({
+    required this.path,
+    required this.link,
+  });
+
+  SubItemModel.fromJson(dynamic json) {
+    path = json['path'];
+    link = json['link'];
+  }
+
+  late String path;
+  late String link;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['path'] = path;
+    map['link'] = link;
+    return map;
+  }
+}
+
 class ItemModel {
   ItemModel({
     required this.path,
@@ -30,7 +52,14 @@ class ItemModel {
     costType = json['costType'] != null ? CostType.values.elementAt(json['costType']) : null;
     price = json['price'];
     gender = json['gender'] != null ? Gender.values.elementAt(json['gender']) : null;
-    defaultItem = json['defaultItem'];
+    defaultItem = json['defaultItem'] ?? false;
+    subItems = [];
+    if (json['other_colors'] != null) {
+      Map<String, dynamic> others = json['other_colors'];
+      for (int i = 0; i < others.length; i++) {
+        subItems.add(SubItemModel.fromJson(others[i.toString()]));
+      }
+    }
   }
 
   late String path;
@@ -43,8 +72,10 @@ class ItemModel {
   late CostType? costType;
   late double? price;
   late Gender? gender;
+  late List<SubItemModel> subItems;
 
   Map<String, dynamic> toJson() {
+    final other = <String, dynamic>{};
     final map = <String, dynamic>{};
     map['path'] = path;
     map['link'] = link;
@@ -55,7 +86,11 @@ class ItemModel {
     map['price'] = price;
     map['costType'] = costType?.index;
     map['gender'] = gender?.index;
-    map['defaultItem'] = defaultItem; 
+    map['defaultItem'] = defaultItem;
+    for (int i = 0; i < subItems.length; i++) {
+      other[i.toString()] = subItems[i].toJson();
+    }
+    map['other_colors'] = other;
     return map;
   }
 }

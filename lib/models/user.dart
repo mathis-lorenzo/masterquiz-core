@@ -39,6 +39,16 @@ class UserItems {
     this.eyebrows,
     this.hair,
     this.circle,
+    this.backgroundColor = -1,
+    this.faceColor = -1,
+    this.makeupColor = -1,
+    this.mouthColor = -1,
+    this.shirtColor = -1,
+    this.earsColor = -1,
+    this.eyesColor = -1,
+    this.eyebrowsColor = -1,
+    this.hairColor = -1,
+    this.circleColor = -1,
   });
 
   UserItems.fromJson(dynamic json) {
@@ -53,6 +63,16 @@ class UserItems {
     eyebrows = json['eyebrows'] != null ? ItemModel.fromJson(json['eyebrows']) : null;
     hair = json['hair'] != null ? ItemModel.fromJson(json['hair']) : null;
     circle = json['circle'] != null ? ItemModel.fromJson(json['circle']) : null;
+    backgroundColor = json['background_color'] ?? -1;
+    faceColor = json['face_color'] ?? -1;
+    makeupColor = json['makeup_color'] ?? -1;
+    mouthColor = json['mouth_color'] ?? -1;
+    shirtColor = json['shirt_color'] ?? -1;
+    earsColor = json['ears_color'] ?? -1;
+    eyesColor = json['eyes_color'] ?? -1;
+    eyebrowsColor = json['eyebrows_color'] ?? -1;
+    hairColor = json['hair_color'] ?? -1;
+    circleColor = json['circle_color'] ?? -1;
   }
 
   late ItemModel? background;
@@ -66,6 +86,16 @@ class UserItems {
   late ItemModel? eyebrows;
   late ItemModel? hair;
   late ItemModel? circle;
+  late int backgroundColor;
+  late int faceColor;
+  late int makeupColor;
+  late int mouthColor;
+  late int shirtColor;
+  late int earsColor;
+  late int eyesColor;
+  late int eyebrowsColor;
+  late int hairColor;
+  late int circleColor;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -80,6 +110,16 @@ class UserItems {
     map['eyebrows'] = eyebrows?.toJson();
     map['hair'] = hair?.toJson();
     map['circle'] = circle?.toJson();
+    map['background_color'] = backgroundColor;
+    map['face_color'] = faceColor;
+    map['makeup_color'] = makeupColor;
+    map['mouth_color'] = mouthColor;
+    map['shirt_color'] = shirtColor;
+    map['ears_color'] = earsColor;
+    map['eyes_color'] = eyesColor;
+    map['eyebrows_color'] = eyebrowsColor;
+    map['hair_color'] = hairColor;
+    map['circle_color'] = circleColor;
     return map;
   }
 }
