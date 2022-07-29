@@ -75,6 +75,30 @@ class UserItems {
     circleColor = json['circle_color'] ?? -1;
   }
 
+  UserItems.fromObject(UserItems obj) {
+    background = obj.background;
+    face = obj.face;
+    makeup = obj.makeup;
+    mouth = obj.mouth;
+    nose = obj.nose;
+    shirt = obj.shirt;
+    ears = obj.ears;
+    eyes = obj.eyes;
+    eyebrows = obj.eyebrows;
+    hair = obj.hair;
+    circle = obj.circle;
+    backgroundColor = obj.backgroundColor;
+    faceColor = obj.faceColor;
+    makeupColor = obj.makeupColor;
+    mouthColor = obj.mouthColor;
+    shirtColor = obj.shirtColor;
+    earsColor = obj.earsColor;
+    eyesColor = obj.eyesColor;
+    eyebrowsColor = obj.eyebrowsColor;
+    hairColor = obj.hairColor;
+    circleColor = obj.circleColor;
+  }
+
   late ItemModel? background;
   late ItemModel? face;
   late ItemModel? makeup;

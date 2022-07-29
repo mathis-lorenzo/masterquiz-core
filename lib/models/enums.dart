@@ -18,7 +18,7 @@ enum ConnectionType {
 }
 
 enum ItemType {
-  skinColor,
+  skinColor, // TODO Delete this shit
   face,
   hair,
   eyebrows,

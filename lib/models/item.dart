@@ -55,9 +55,9 @@ class ItemModel {
     defaultItem = json['defaultItem'] ?? false;
     subItems = [];
     if (json['other_colors'] != null) {
-      Map<String, dynamic> others = json['other_colors'];
+      List<dynamic> others = json['other_colors'];
       for (int i = 0; i < others.length; i++) {
-        subItems.add(SubItemModel.fromJson(others[i.toString()]));
+        subItems.add(SubItemModel.fromJson(others[i]));
       }
     }
   }
@@ -75,8 +75,8 @@ class ItemModel {
   late List<SubItemModel> subItems;
 
   Map<String, dynamic> toJson() {
-    final other = <String, dynamic>{};
     final map = <String, dynamic>{};
+    final List<Map<String, dynamic>> other = [];
     map['path'] = path;
     map['link'] = link;
     map['type'] = type.index;
@@ -88,7 +88,7 @@ class ItemModel {
     map['gender'] = gender?.index;
     map['defaultItem'] = defaultItem;
     for (int i = 0; i < subItems.length; i++) {
-      other[i.toString()] = subItems[i].toJson();
+      other.add(subItems[i].toJson());
     }
     map['other_colors'] = other;
     return map;
