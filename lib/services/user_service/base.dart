@@ -14,7 +14,7 @@ class FirestoreUserService extends BaseFirestoreService<UserModel> {
 
   @override
   UserModel fromFirestore(DocumentSnapshot<Map<String, dynamic>> doc) {
-    return UserModel.fromJson(doc);
+    return UserModel.fromDoc(doc);
   }
 
   @override

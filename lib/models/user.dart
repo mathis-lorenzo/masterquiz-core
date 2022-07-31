@@ -1,18 +1,24 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'item.dart';
 
 class UserModel {
   UserModel({
+    this.id = "",
     this.username,
     this.points = 0,
     this.userItems,
   });
 
-  UserModel.fromJson(dynamic json) {
+  UserModel.fromDoc(DocumentSnapshot doc) {
+    dynamic json = doc.data()!;
+    id = doc.id;
     username = json['username'];
     points = json['points'];
     userItems = json['userItems'] != null ? UserItems.fromJson(json['userItems']) : null;
   }
 
+  late String id;
   late String? username;
   late int points;
   late UserItems? userItems;
